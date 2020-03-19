@@ -6,4 +6,4 @@ before_install:
   - docker build -t maiqubal/docker-prodbuild -f Dockerfile.dev .
 
 script:
-  - docker run maiqubal/docker-prodbuild npm run test -- --coverage
+  - docker run -e CI=true maiqubal/docker-prodbuild npm run test
